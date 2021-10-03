@@ -1,0 +1,14 @@
+http://192.168.31.227/
+http://192.168.31.227/products/
+http://192.168.31.227/contact/
+http://192.168.31.227/category/1/
+http://192.168.31.227/category/2/
+http://192.168.31.227/category/3/
+http://192.168.31.227/category/4/
+http://192.168.31.227/basket/
+http://192.168.31.227/orders/
+http://192.168.31.227/auth/user/edit/
+http://192.168.31.227/orders/update/4/
+http://192.168.31.227/orders/update/3/
+http://192.168.31.227/orders/update/2/
+http://192.168.31.227/orders/update/1/

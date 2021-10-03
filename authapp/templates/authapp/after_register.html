@@ -1,0 +1,11 @@
+{% extends 'authapp/base.html' %}
+{% load static %}
+
+{% block container %}
+    <div class="h2 text-center head">
+        Вы успешно зарегистрировались. Для активации Вашего аккаунта перейдите по ссылке, отправленной Вам на почту.
+    </div>
+    <a href="{% url 'main:index' %}" class="btn btn-round form-control">
+        На главную
+    </a>
+{% endblock %}

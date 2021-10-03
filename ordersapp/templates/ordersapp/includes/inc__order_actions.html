@@ -1,0 +1,20 @@
+{% if object.is_forming %}
+    <a href="{% url 'orders:proceeding_status' object.pk %}"
+       class="btn btn-warning btn-round form-control last">
+        Купить
+    </a>
+    <a href="{% url 'orders:delete' object.pk %}"
+       class="btn btn-default btn-round form-control last">
+        Удалить заказ
+    </a>
+{% endif %}
+
+<a href="{% url 'orders:order_list' %}"
+   class="btn btn-info btn-round form-control last">
+    Вернуться к списку заказов
+</a>
+
+<a href="{% url 'main:index' %}"
+   class="btn btn-default btn-round form-control last">
+    Вернуться на главную
+</a>

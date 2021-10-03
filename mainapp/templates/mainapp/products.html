@@ -1,0 +1,71 @@
+{% extends 'mainapp/basic.html'%}
+{% load static %}
+
+{% block mycontainer %}
+    <div class="hero-white">
+        {% include 'mainapp/includes/menu_main.html' %}
+    </div>
+
+    <div class="details">
+        {% include 'mainapp/includes/menu_catalog.html' %}
+
+        <div class="details-products">
+            <div class="details-slider">
+                <div class="slider-product">
+<!--                    <img src="{% static 'img/slider1.jpg' %}">-->
+                    <img src="/media/{{ hot_product.image }}" alt="product image">
+                </div>
+                <div class="slider-control">
+                    <div class="block">
+                        <a href="#"><img src="/media/{{ hot_product.image }}" alt="">
+                            <div class="text"></div>
+                        </a>
+                    </div>
+                    <div class="block">
+                        <a href="#"><img src="/media/{{ hot_product.image }}" alt="">
+                            <div class="text"></div>
+                        </a>
+                    </div>
+                    <div class="block">
+                        <a href="#"><img src="/media/{{ hot_product.image }}" alt="">
+                            <div class="text"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="description">
+                <h3 class="big-bold">{{ hot_product.name|capfirst }}</h3>
+                <h3 class="red">Успей купить по скидке!</h3>
+                <p class="price">{{ hot_product.price }}<span>руб.</span></p>
+                <a href="{% url 'basket:add' hot_product.pk %}" class="red-button">
+                    В корзину <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>
+                <div class="description-text">
+                    <p>{{ hot_product.short_desc }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="related">
+            <div class="title clearfix">
+                <h2>Похожие товары</h2>
+                <a class="explore" href="#">показать все <img src="{% static 'img/arrow.png' %}" alt=""></a>
+            </div>
+            <div class="related-products clearfix">
+                {% for element in similar_products %}
+                    <div class="block">
+                        <a href="{% url 'main:product_page' element.pk %}">
+                            <img src="/media/{{ element.image }}" alt="img">
+                            <div class="text">
+                                <img src="/static/img/icon-hover.png" alt="img">
+                                <h4>{{ element.name }}</h4>
+                                <p>{{ element.description }}</p>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

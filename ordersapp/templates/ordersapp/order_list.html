@@ -1,0 +1,64 @@
+{% extends 'ordersapp/basic.html' %}
+{% load static %}
+
+{% block container %}
+    {% if not object_list %}
+        <div class="h2 text-center head">
+            Заказов пока нет
+        </div>
+    {% else %}
+        <div class="h2 text-center head">
+            Ваши заказы, {{ user.first_name|default:'user'|title }}
+        </div>
+        <table class="table orders_list">
+            <thead>
+            <tr>
+                <th>ID заказа</th>
+                <th>Дата создания</th>
+                <th>Дата обновления</th>
+                <th>Статус заказа</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in object_list %}
+                <tr>
+                    <td class="td1 orders_list">{{ item.pk }}</td>
+                    <td>{{ item.add_date|date:"Y-m-d H:i:s" }}</td>
+                    <td>{{ item.update_date|date:"Y-m-d H:i:s" }}</td>
+                    <td>{{ item.get_status_display }}</td>
+                    <td>
+                        <a href="{% url 'orders:read' item.pk %}">
+                            посмотреть
+                        </a>
+                    </td>
+                    <td>
+                        {% if item.is_forming %}
+                            <a href="{% url 'orders:update' pk=item.pk %}">
+                                редактировать
+                            </a>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if item.is_forming %}
+                            <a href="{% url 'orders:delete' item.pk %}">
+                                удалить
+                            </a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+    <a href="{% url 'main:index' %}"
+       class="btn btn-default btn-round">
+        Вернуться на главную
+    </a>
+
+    <a href="{% url 'orders:create' %}"
+       class="btn btn-default btn-round">
+        Создать новый заказ
+    </a>
+
+{% endblock %}

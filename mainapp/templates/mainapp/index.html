@@ -1,0 +1,44 @@
+{% extends 'mainapp/basic.html'%}
+{% load static %}
+
+{% block mycontainer %}
+	<div class="slider">
+			{% include 'mainapp/includes/menu_main.html' %}
+			<div class="text-slider">
+				<h3 class="big">Танцевальный магазин</h3>
+				<h4 class="smallText">Одежда, обувь, аксессуары - всё, что необходимо танцору!</h4>
+				<a href="#" class="button-order">Начать покупки <img src="/static/img/arrow.png" alt=""></a>
+			</div>
+			<div class="navi">
+				<a href="#"></a><a href="#"></a><a href="#"></a>
+			</div>
+		</div>
+	<div class="featured">
+			<div class="featured-menu">
+				<a class="active" href="#">Популярные</a><a href="#">Новинки</a>
+			</div>
+			<a class="explore" href="#">Показать все <img src="{% static 'img/arrow.png' %}" alt=""></a>
+			<div class="clearfix">
+			</div>
+			<div class="tab-content">
+				<div class="block">
+					<a href="#"><img src="{% static 'img/puanty.jpg' %}" alt="">
+						<div class="text">
+							<img src="{% static 'img/icon-hover.png' %}" alt="img">
+							<h4>Пуанты классические</h4>
+							<p>Отличная цена</p>
+						</div>
+					</a>
+				</div>
+				<div class="block">
+					<a href="#"><img src="{% static 'img/kupalnik.jpg' %}" alt="">
+						<div class="text">
+							<img src="{% static 'img/icon-hover.png' %}" alt="">
+							<h4>Купальник</h4>
+							<p>Для классического танца</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+{% endblock %}

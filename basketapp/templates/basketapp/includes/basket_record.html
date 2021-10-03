@@ -1,0 +1,14 @@
+<img src="/media/{{ el.product.image }}"
+     alt="{{ el.product.short_desc }}">
+<span class="category_name">{{ el.product.category.name }}</span>
+<span class="product_name">{{ el.product.name }}</span>
+<span class="product_price">{{ el.product.price }}&nbspруб.</span>
+<input type="number" name="{{ el.pk }}"
+       min="0" max="{{ el.product.quantity }}"
+       value="{{ el.quantity }}">
+<span class="product_cost">{{ el.product_cost }}&nbspруб.</span>
+
+<a href="{% url 'basket:remove' basket_element_pk=el.pk %}"
+   class="btn btn-round">
+    удалить
+</a>

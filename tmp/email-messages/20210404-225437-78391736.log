@@ -1,0 +1,14 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: 
+ =?utf-8?b?0J/QvtC00YLQstC10YDQttC00LXQvdC40LUg0LDQutC60LDRg9C90YLQsCB1c2Vy?=
+ =?utf-8?b?XzY=?=
+From: django@bg.local
+To: oleg@example.ru
+Date: Sun, 04 Apr 2021 19:54:37 -0000
+Message-ID: <161756607780.24036.16781958218032820493@DESKTOP-MMPT89H>
+
+Чтобы подтвердить аккаунт user_6 на портале http://localhost:8000 перейдите по ссылке: 
+http://localhost:8000/auth/user/activate/oleg@example.ru/3ac07ccb10c9188c5a501bd538a2fc02b9b52d95/ 
+-------------------------------------------------------------------------------
